@@ -1,4 +1,4 @@
-#include "TicTacToe.cpp"
+#include "test.hpp"
 
 bool cba (bool arr[], size_t n) {
     bool flag = true;
@@ -9,8 +9,6 @@ bool cba (bool arr[], size_t n) {
     }
     return flag;
 }
-
-/* Test functions here */
 
 bool test_endState() {
     Board board1(DIM, DIM);
