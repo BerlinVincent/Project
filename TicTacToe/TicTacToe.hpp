@@ -3,8 +3,10 @@
 #include <algorithm>
 #include <cmath>
 
+using namespace std;
+
 #define DIM 3
-#define board_vec std::vector<std::vector<int>>
+#define board_vec vector<vector<int>>
 
 class Position {
     public:
@@ -29,7 +31,7 @@ class Board {
         Board(int a, int b) {
             height = a;
             width = b;
-            matrix = std::vector(a, std::vector(b, 0));
+            matrix = vector(a, vector(b, 0));
         }
 
         // Get Functions

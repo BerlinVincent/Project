@@ -28,7 +28,3 @@ bool endState(Board &board) {
 bool play(Board &board) {
     return endState(board);
 }
-
-int main() {
-    return 0;
-}
