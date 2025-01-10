@@ -82,9 +82,9 @@ class Board {
 /**
  * @brief Function to keep the game loop going until an end state is reached.
  * @param board Board on which the game is player
- * @returns bool: wether an end state has been reached
+ * @returns when an end state has been reached
  */
-bool play(Board &board);
+void play(Board &board);
 
 /**
  * @brief Function to determine wether end state has been reached.
