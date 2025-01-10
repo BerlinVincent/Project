@@ -19,27 +19,19 @@ bool test_endState() {
 
     bool tests[3] = {false, false, false};
 
-    Position pos00(0, 0);
-    Position pos10(1, 0);
-    Position pos20(2, 0);
-    Position pos01(0, 1);
-    Position pos11(1, 1);
-    Position pos21(2, 1);
-    Position pos02(0, 2);
-    Position pos12(1, 2);
-    Position pos22(2, 2);
+    Position pos[9] = {Position(0, 0), Position(0, 1), Position(0, 2), Position(1, 0), Position(1, 1), Position(1, 2), Position(2, 0), Position(2, 1), Position(2, 2)};
 
-    board1.setMatrix(pos00, 1);
-    board1.setMatrix(pos10, 1);
-    board1.setMatrix(pos20, 1);
+    board1.setMatrix(pos[0], 1);
+    board1.setMatrix(pos[3], 1);
+    board1.setMatrix(pos[6], 1);
 
-    board2.setMatrix(pos00, -1);
-    board2.setMatrix(pos01, -1);
-    board2.setMatrix(pos02, -1);
+    board2.setMatrix(pos[0], -1);
+    board2.setMatrix(pos[1], -1);
+    board2.setMatrix(pos[2], -1);
 
-    board3.setMatrix(pos00, 1);
-    board3.setMatrix(pos11, 1);
-    board3.setMatrix(pos22, 1);
+    board3.setMatrix(pos[0], 1);
+    board3.setMatrix(pos[4], 1);
+    board3.setMatrix(pos[8], 1);
 
     tests[0] = endState(board1);
     tests[1] = endState(board2);

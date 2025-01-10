@@ -13,6 +13,8 @@ class Position {
         int x;
         int y;
 
+        // Constructors
+        Position();
         Position(int a, int b) {
             x = a;
             y = b;
@@ -28,10 +30,11 @@ class Board {
 
     public:
         // Constructor
+        Board();
         Board(int a, int b) {
             height = a;
             width = b;
-            matrix = vector(a, vector(b, 0));
+            matrix = vector<vector<int>>(a, vector<int>(b, 0));
         }
 
         // Get Functions
