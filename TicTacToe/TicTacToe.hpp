@@ -91,6 +91,18 @@ class Board {
 char posConvert(board_vec boardPos);
 
 /**
+ * @brief A function to make sure input coordinate is on the Board
+ * @returns int: valid coordinate
+ */
+int inputValidation();
+
+/**
+ * @brief A function to display the Board in the Terminal
+ * @param matrix A Board to be displayed
+ */
+void displayBoard(board_vec matrix);
+
+/**
  * @brief Function to keep the game loop going until an end state is reached.
  * @param board Board on which the game is player
  * @param players Names given to player 1 and 2
