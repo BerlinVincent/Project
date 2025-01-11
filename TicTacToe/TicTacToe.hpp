@@ -2,8 +2,12 @@
 #include <vector>
 #include <algorithm>
 #include <cmath>
+#include <chrono>
+#include <thread>
 
 using namespace std;
+using namespace this_thread;
+using namespace chrono;
 
 #define DIM 3
 #define board_vec vector<vector<int>>
@@ -27,8 +31,8 @@ class Position {
          * @param b Position on the y-Axis
          */
         Position(int a, int b) {
-            x = a;
-            y = b;
+            y = a;
+            x = b;
         }
 };
 
@@ -80,11 +84,19 @@ class Board {
 };
 
 /**
+ * @brief A function to convert a number on the Board to an appropriate character
+ * @param boardPos Position on the Board
+ * @returns char: "O" - player 1, "X" - player -1, " " no move set
+ */
+char posConvert(board_vec boardPos);
+
+/**
  * @brief Function to keep the game loop going until an end state is reached.
  * @param board Board on which the game is player
+ * @param players Names given to player 1 and 2
  * @returns when an end state has been reached
  */
-void play(Board &board);
+void play(Board &board, string players[2]);
 
 /**
  * @brief Function to determine wether end state has been reached.
