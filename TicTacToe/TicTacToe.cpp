@@ -13,10 +13,9 @@ bool endState(Board &board) {
         for (int j = 0; j < n; j++) {
             row += matrix.at(i).at(j);
             column += matrix.at(j).at(i);
-            moves_made += abs(matrix.at(i).at(j));
         }
         
-        if (abs(row) == n || abs(column) == n || moves_made == n * m) {
+        if (abs(row) == n || abs(column) == n) {
             return true;    // only return if true, otherwise keep running
         }
         row = 0;
@@ -70,6 +69,7 @@ void displayBoard(board_vec matrix) {
 }
 
 void play(Board &board, string players[2]) {
+    bool draw_flag = false;
     int round = 0;
     int current_player = 1;
     board_vec matrix = board.getMatrix();
@@ -114,12 +114,19 @@ void play(Board &board, string players[2]) {
         round++;
         cout << '\n';
         sleep_for(seconds(1));
+
+        if (round == 9) {
+            draw_flag = true;
+            break;
+        }
     }
 
-    if (current_player == 1) {
+    if (current_player == 1 && !draw_flag) {
         cout << players[0] << " wins!";
-    } else if (current_player == -1) {
+    } else if (current_player == -1 && !draw_flag) {
         cout << players[1] << " wins!";
+    } else if (draw_flag) {
+        cout << "Draw!";
     } else {
         cout << "\nSomething went very wrong. Failure exit.\n";
         exit(EXIT_FAILURE);
