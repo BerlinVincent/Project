@@ -121,12 +121,12 @@ void play(Board &board, string players[2]) {
         }
     }
 
-    if (current_player == 1 && !draw_flag) {
-        cout << players[0] << " wins!";
-    } else if (current_player == -1 && !draw_flag) {
-        cout << players[1] << " wins!";
-    } else if (draw_flag) {
+    if (draw_flag) {
         cout << "Draw!";
+    } else if (current_player == 1) {
+        cout << players[0] << " wins!";
+    } else if (current_player == -1) {
+        cout << players[1] << " wins!";
     } else {
         cout << "\nSomething went very wrong. Failure exit.\n";
         exit(EXIT_FAILURE);
